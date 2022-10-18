@@ -9,9 +9,11 @@ int enqueue(int item) {
         printf("큐 포화상태입니다.\n");
         return 0;
     }
+    else
     rear = (rear + 1) % MAX_SIZE;
     QUEUE[rear] = item;
     printf("enqueue>>Queue[%d]=%d\n",rear,QUEUE[rear]);
+    return 1;
 }
 int dequeue() {
     if ( front == rear) {
@@ -19,7 +21,7 @@ int dequeue() {
         return 0;
     }
     front = (front + 1) % MAX_SIZE;
-    return QUEUE[front];
+    return 0;
 }
 int main() {
     int value;
@@ -27,9 +29,6 @@ int main() {
     enqueue(20);
     enqueue(30);
     enqueue(40);
-    value = dequeue();
-    printf("dequeue>> %d\n", value);
-    value = dequeue();
-    printf("dequeue>> %d\n", value);
+    dequeue();
     return 1;
 }
