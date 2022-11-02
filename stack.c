@@ -33,17 +33,13 @@ int PEEK(){
     }
 }
 
-void PRINT(){
-    for(int i = top; i >= 0; i--){
-        printf("stack[%d] = %d\n", i, stack[i]);
+void PRINT(int value){
+    for(value = top; value >= 0; value--){
+        printf("stack[%d] = %d\n", value, stack[value]);
     }
-}
+}s
 
  int main(){
     PUSH(1); PUSH(2); PUSH(3);
-    POP();
-    PEEK();
-    PUSH(4);
-    PRINT();
-
+    PRINT(1);
 }
