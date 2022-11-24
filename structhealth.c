@@ -12,8 +12,8 @@ int main(void) {
     printf("%d번\n",one.no);
     printf("%fcm\n",one.height);
     printf("%fcm\n",one.weight);
-    printf("주%d회\n",one.time >= 3 ? "건강" : 주의);
-    if (one.time > 3)
+    printf("주%d회\n",one.time);
+    if (one.time >= 3)
     {
         printf("건강상태 양호\n\n");
     }
@@ -24,10 +24,20 @@ int main(void) {
     printf("%fcm\n",two.height);
     printf("%fcm\n",two.weight);
     printf("주%d회\n\n",two.time);
+    if (one.time >= 3)
+    {
+        printf("건강상태 양호\n\n");
+    }
+    else printf("건강상태 주의\n\n");
 
     struct health ther={3,173.5,53.8,2};
     printf("%d번\n",ther.no);
     printf("%fcm\n",ther.height);
     printf("%fcm\n",ther.weight);
     printf("주%d회\n\n",ther.time);
+    if (one.time >= 3)
+    {
+        printf("건강상태 양호\n\n");
+    }
+    else printf("건강상태 주의\n\n");
 }
