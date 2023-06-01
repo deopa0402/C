@@ -1,25 +1,23 @@
-#ifndef __BINARY_TREE_H__
-#define __BINARY_TREE_H__
+
+#ifndef C_BINARY_TREE_H
+#define C_BINARY_TREE_H
 
 typedef int BTData;
 
-typedef struct _bTreeNode
-{
+typedef struct _bTreeNode {
     BTData data;
-    struct _bTreeNode * left;
-    struct _bTreeNode * right;
-}BTreeNode;
+    struct _bTreeNode* left;
+    struct _bTreeNode* right;
+} BTreeNode;
 
-//BTreeNode 관련 연산들
+BTreeNode* MakeBTreeNode(void);
+BTData GetData(BTreeNode* bt);
+void SetData(BTreeNode* bt, BTData data);
 
-BTreeNode * MakeBTreeNode(void); /*노드의 생성*/
-BTData getData(BTreeNode * bt);
-void SetData(BTreeNode * bt , BTData data);
+BTreeNode* GetLeftSubTree(BTreeNode* bt);
+BTreeNode* GetRightSubTree(BTreeNode* bt);
 
-BTreeNode * GetLeftSubTree(BTreeNode * bt);
-BTreeNode * GetRightSubTree(BTreeNode * bt);
+void MakeLeftSubTree(BTreeNode* main, BTreeNode* sub);
+void MakeRightSubTree(BTreeNode* main, BTreeNode* sub);
 
-void MakeLeftSubTree(BTreeNode * main, BTreeNode sub);
-void MakeRightSubTree(BTreeNode * main, BTreeNode sub);
-
-#endif
+#endif //C_BINARY_TREE_H
